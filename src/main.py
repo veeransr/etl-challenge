@@ -10,7 +10,7 @@ class EtlScript:
     def __init__(self):
         self.database_conn = Database("acme")
         self.header_file = "headers.txt"
-        self.data_file = "data.tsv"
+        self.data_file = "data.csv"
         self.out_file = "output.csv"
 
     def load_file_to_database(self, file_path: str):
