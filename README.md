@@ -8,5 +8,5 @@ E.g. the first column in `data.csv` is `Order ID`, the next is `Order Date` and 
 - Use the class provided in `src/main.py`, start your code in the class's `run` function, and write as if this were production-ready code. 
 - We are not using a real database here, so just pretend that the Database class's `load_file` function handles everything for us.
 
-Note: use Python >= 3.7 to solve. No other packages or dependencies are required. The goal is to show us your coding style
-and see how you would approach the problem. This should not take more than 1 hour to complete. 
+Note: use Python >= 3.7 to solve and do not use any other packages or dependencies (e.g. Pandas). The goal is to show us your coding style
+and see how you would approach the problem using plain Python. This should not take more than 1 hour to complete. 
