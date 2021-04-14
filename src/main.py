@@ -1,6 +1,6 @@
 import logging
 
-from database import Database
+from src.database import Database
 
 logging.basicConfig(level="DEBUG")
 logger = logging.getLogger(__name__)
