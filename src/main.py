@@ -20,7 +20,6 @@ class EtlScript:
         try:
           with open (self.header_file, 'r') as head:
             headers = [i for i in  head.read().split('\n') if i != '']
-            print(headers)
             header_row = '|'.join(headers) 
             with open(self.out_file, 'a') as new:
                 new.write(str(header_row))
