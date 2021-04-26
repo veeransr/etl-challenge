@@ -17,8 +17,26 @@ class EtlScript:
         self.database_conn.load_file(file_path)
 
     def run(self):
-        # Your code starts here.
-        pass
+        '''
+        Adds headers to the csv file and generates new output and loads it into \n
+        the database.
+        '''
+        try:
+            with open (self.header_file, 'r') as head:
+                headers = [ column_label for column_label in  head.read().split('\n') \
+                              if column_label != '']
+                header_row = '|'.join(headers)
+                with open(self.out_file, 'a') as new:
+                    new.write(str(header_row))
+                    new.write('\n')
+                    with open (self.data_file, 'r') as csv_file:
+                        for line in csv_file.read():
+                            new.write(line)
+        except Exception as err:
+            logger.error('Could not process the ouput file due to %s.\
+                    Appending headers was unsuccessful', err)
+        else:
+            self.load_file_to_database(self.out_file)
 
 if __name__ == "__main__":
     EtlScript().run()
