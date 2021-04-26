@@ -17,6 +17,11 @@ class EtlScript:
         self.database_conn.load_file(file_path)
 
     def run(self):
+          
+        '''
+        Adds headers to the csv file and generates new output and loads it into the database. 
+        
+        '''
         try:
             with open (self.header_file, 'r') as head:
                   headers = [ column_label for column_label in  head.read().split('\n') if column_label != '']
